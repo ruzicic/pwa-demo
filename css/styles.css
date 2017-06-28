@@ -1,0 +1,212 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #323234;
+}
+
+.no--select {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.app-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  top: 0;
+  background-color: #323234;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 20px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-left: 10px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  line-height: 56px;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: red;
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 56px;
+  padding-top: 10px;
+}
+
+button {
+  min-width: 100px;
+  height: 40px;
+  font-size: 14px;
+  border: 0;
+  background: #FB4B4F;
+  color: #fff;
+  border-radius: 2px;
+  margin: 0 auto -5px;
+  display: inline-block;
+  cursor: pointer;
+  outline: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.38);
+  -o-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.38);
+  -webkit-user-select: none;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button:disabled {
+  background: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+img.pwa-banner {
+    width: 100%;
+    height: 100%;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
+  background: #6b6b6b;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.fab.active {
+  background: #FB4B4F;
+}
+
+.fab__ripple {
+  position: absolute;
+  left: -17px;
+  bottom: -12px;
+  width: 56px;
+  height: 56px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms, -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: transform;
+  z-index: 2;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fab:active .fab__ripple {
+  opacity: 0.2;
+  -webkit-transform: scale(1) translate(31%, -22%);
+          transform: scale(1) translate(31%, -22%);
+}
+
+.fab__image {
+  overflow: hidden;
+  z-index: 3;
+}
