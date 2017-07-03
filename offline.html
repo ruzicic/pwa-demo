@@ -29,46 +29,10 @@
 
 
     <div class="app-layout">
-        <header>
-            <span class="header-title no--select">Execom Web Club Demo App</span>
-            <nav>
-                <a href="http://localhost:3017/">Home</a>
-                <a href="http://localhost:3017/">Other page</a>
-            </nav>
-        </header>
-
-        <main>
-            <h3><a target="_blank" rel="noopener" href="#">hello</a></h3>
-
-            <div class="banner">
-                <img class="pwa-banner" src="./images/pwa.png" alt="PWA">
-            </div>
-        </main>
-
-        <div class="fab fab__push">
-            <div class="fab__ripple"></div>
-            <img class="fab__image" src="./images/push-off.png" alt="Push Notification" />
-        </div>
-
-        <!-- Toast msg -->
-        <div class="toast__msg"></div>
-
+        <h1>Oooops, seems like you're offline</h1>
     </div>
 
     <!-- JS -->
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyACnQYxIeWT9qb__sXI_DTPGQzbWja-zyA",
-            authDomain: "execom-pwa-demo.firebaseapp.com",
-            databaseURL: "https://execom-pwa-demo.firebaseio.com",
-            projectId: "execom-pwa-demo",
-            storageBucket: "",
-            messagingSenderId: "94170349850"
-        };
-        firebase.initializeApp(config);
-    </script>
     <script src="./js/toast.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/offline.js"></script>
