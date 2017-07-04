@@ -6,8 +6,8 @@ const pagesCacheName = `${version}-pages`;
 const imagesCacheName = `${version}-images`;
 
 const criticalResources = [
-    'http://localhost:3017/manifest.json',
-    'http://localhost:3017/offline.html',
+    '/manifest.json',
+    '/offline.html',
     '/css/styles.css',
 
     '/images/push-off.png',
@@ -99,6 +99,7 @@ self.addEventListener('fetch', event => {
                 // serve the resource if cached, otherwise fetch it through the network
                 return response || fetch(event.request)
                     .then(response => {
+                        // request is a stream -> clone it
                         let copy = response.clone();
                         let request = event.request;
                         let url = new URL(request.url);
@@ -130,4 +131,36 @@ self.addEventListener('message', event => {
         trimCache(pagesCacheName, 50);
         trimCache(imagesCacheName, 20);
     }
+});
+
+self.addEventListener('push', (event) => {
+    event.waitUntil(
+        self.registration.showNotification('Testing push notifications', {
+            body: 'I am body of this message'
+        })
+    );
+})
+
+// firebase -->
+
+importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js');
+
+// Initialize Firebase
+const config = {
+    apiKey: "AIzaSyACnQYxIeWT9qb__sXI_DTPGQzbWja-zyA",
+    authDomain: "execom-pwa-demo.firebaseapp.com",
+    databaseURL: "https://execom-pwa-demo.firebaseio.com",
+    projectId: "execom-pwa-demo",
+    storageBucket: "",
+    messagingSenderId: "94170349850"
+};
+
+firebase.initializeApp(config);
+
+const messaging = firebase.messaging();
+
+messaging.setBackgroundMessageHandler(payload => {
+    console.log('[worker] Received push notification: ', payload);
+    return self.registration.showNotification(payload.title, payload);
 });

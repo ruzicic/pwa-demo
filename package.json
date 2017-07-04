@@ -3,23 +3,18 @@
   "version": "0.0.1",
   "description": "Execom Web Club Demo App",
   "main": "server.js",
-  "author": "Mladen Ruzicic <mruzicic@execom.eu>",
+  "author": "Mladen Ruzicic <mladen.ruzicic@wolkabout.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run css && node server.js",
-    "css": "postcss -u autoprefixer -r css/*",
-    "postinstall": "npm run start"
+    "start": "node server.js"
   },
   "dependencies": {
-    "body-parser": "1.17.2",
-    "express": "4.15.3",
-    "node-gcm": "0.14.6",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "firebase-admin": "^5.0.0",
     "web-push": "^3.2.2"
   },
-  "devDependencies": {
-    "autoprefixer": "7.1.1",
-    "postcss-cli": "4.1.0"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "7.9.0"
   }
