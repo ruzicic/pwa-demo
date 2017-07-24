@@ -3,7 +3,7 @@ importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js');
 
 // Initialize Firebase
 const config = {
-    apiKey: "AIzaSyACnQYxIeWT9qb__sXI_DTPGQzbWja-zyA",
+    apiKey: "<API-KEY-HERE>",
     authDomain: "execom-pwa-demo.firebaseapp.com",
     databaseURL: "https://execom-pwa-demo.firebaseio.com",
     projectId: "execom-pwa-demo",
